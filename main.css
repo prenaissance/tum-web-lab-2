@@ -7,6 +7,7 @@
 
 a {
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .text {
@@ -17,10 +18,40 @@ a {
   color: var(--text-gray);
 }
 
+.w-fit {
+  width: fit-content;
+}
+
+.w-half {
+  width: 50%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--primary);
   color: var(--text);
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+}
+
+.google-play-badge {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  --width: 15rem;
+  width: var(--width);
+  height: calc(var(--width) / 4);
+}
+
+google-play-badge-link {
+  position: relative;
 }
 
 .nav {
@@ -79,6 +110,7 @@ body {
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
   margin: 1rem 2rem;
+  overflow: hidden;
 }
 
 .showcase__image {
@@ -182,4 +214,23 @@ body {
   color: var(--text-gray);
   width: 30rem;
   margin: 1rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .showcase {
+    grid-template-columns: 1fr;
+  }
+  .showcase__image {
+    height: 20rem;
+    width: 20rem;
+  }
+  .nav {
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
 }
