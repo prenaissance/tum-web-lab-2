@@ -3,10 +3,12 @@
   --secondary: rgb(133, 203, 204);
   --text: #ffffff;
   --text-gray: #b3b3b3;
+  scroll-behavior: smooth;
 }
 
 a {
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .text {
@@ -17,10 +19,40 @@ a {
   color: var(--text-gray);
 }
 
+.w-fit {
+  width: fit-content;
+}
+
+.w-half {
+  width: 50%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--primary);
   color: var(--text);
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+}
+
+.google-play-badge {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  --width: 15rem;
+  width: var(--width);
+  height: calc(var(--width) / 4);
+}
+
+google-play-badge-link {
+  position: relative;
 }
 
 .nav {
@@ -75,10 +107,11 @@ body {
 
 .showcase {
   background-color: var(--secondary);
-  display: "grid";
-  grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 1rem 2rem;
+  overflow: hidden;
 }
 
 .showcase__image {
@@ -168,6 +201,12 @@ body {
   align-items: center;
 }
 
+.two-column__image {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
 .left-title {
   font-size: 3rem;
   font-weight: 500;
@@ -182,4 +221,32 @@ body {
   color: var(--text-gray);
   width: 30rem;
   margin: 1rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    gap: 1rem;
+  }
+  .showcase__image {
+    height: 20rem;
+    width: 20rem;
+  }
+  .section__description {
+    width: auto;
+  }
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  .two-column__image {
+    height: 20rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
 }
