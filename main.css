@@ -3,6 +3,7 @@
   --secondary: rgb(133, 203, 204);
   --text: #ffffff;
   --text-gray: #b3b3b3;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -106,8 +107,8 @@ google-play-badge-link {
 
 .showcase {
   background-color: var(--secondary);
-  display: "grid";
-  grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 1rem 2rem;
   overflow: hidden;
@@ -200,6 +201,12 @@ google-play-badge-link {
   align-items: center;
 }
 
+.two-column__image {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
 .left-title {
   font-size: 3rem;
   font-weight: 500;
@@ -217,15 +224,24 @@ google-play-badge-link {
 }
 
 @media screen and (max-width: 768px) {
-  .showcase {
-    grid-template-columns: 1fr;
+  .nav {
+    gap: 1rem;
   }
   .showcase__image {
     height: 20rem;
     width: 20rem;
   }
-  .nav {
-    gap: 1rem;
+  .section__description {
+    width: auto;
+  }
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  .two-column__image {
+    height: 20rem;
   }
 }
 
