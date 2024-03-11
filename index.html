@@ -7,86 +7,89 @@
     <title>Electric Toothbrushes</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <nav class="nav">
-        <a class="logo" href="#">
+    <nav class="flex items-center gap-80 border-gray-400 p-3 border-b-1">
+        <a class="text-lg text-teal-200 text-decoration-none" href="#">
             Electric Toothbrushes
         </a>
-        <div class="links">
-            <div class="stack space-around">
-                <a class="link-light" href="#showcase-image">About us</a>
-                <a class="link-light" href="#comparison">Comparison</a>
-                <a class="link-light" href="#battery">Battery</a>
+        <div class="transition-all grow">
+            <div class="flex flex-wrap gap-x-2 text-center space-around">
+                <a class="text-white hover:text-gray-400 text-decoration-none" href="#showcase-image">About us</a>
+                <a class="text-white hover:text-gray-400 text-decoration-none" href="#comparison">Comparison</a>
+                <a class="text-white hover:text-gray-400 text-decoration-none" href="#battery">Battery</a>
             </div>
             <hr class="text-gray" />
-            <div class="stack space-around">
-                <a class="link-gray" href="#electric-toothbrush">Electric Toothbrushes</a>
-                <a class="link-gray" href="#electric-toothbrush">Purchase</a>
+            <div class="flex flex-wrap gap-x-2 text-center space-around">
+                <a class="text-gray-400 hover:text-white text-decoration-none" href="#electric-toothbrush">Electric
+                    Toothbrushes</a>
+                <a class="text-gray-400 hover:text-white text-decoration-none" href="#electric-toothbrush">Purchase</a>
             </div>
         </div>
     </nav>
     <main>
-        <section class="banner mobile-only">
-            <h2 class="w-half">
+        <section class="xs:block flex justify-between items-center md:hidden px-8 py-2 text-teal-200 text-xl">
+            <h2 class="w-[50%]">
                 Install our mobile app for 10% off
             </h2>
-            <a href="#" class="google-play-badge-link">
-                <img class="google-play-badge" src="images/google-play-badge.png" width="256px" height="256px"
+            <a href="#">
+                <img class="rounded-md w-60 aspect-[4/1] object-cover" src="images/google-play-badge.png" width="256px"
                     alt="Get it on Google Play" />
             </a>
         </section>
-        <section class="showcase shadow-lg">
-            <div id="electric-toothbrush" class="showcase__content">
-                <h1 class="showcase__title">AENO DB4 Sonic Toothbrush</h1>
-                <p class="showcase__subtitle">Your smile is amazing!</p>
-                <button id="purchase" class="outline-square-button">Buy now <span
-                        class="mobile-hidden">--></span></button>
+        <section class="gap-0 md:gap-8 grid grid-cols-2 bg-teal-200 shadow-lg mx-8 my-4 overflow-hidden">
+            <div id="electric-toothbrush" class="flex flex-col justify-center items-center p-4 text-black text-center">
+                <h1 class="font-medium text-xl leading-6">AENO DB4 Sonic Toothbrush</h1>
+                <p class="mb-8 font-normal">Your smile is amazing!</p>
+                <button id="purchase"
+                    class="bg-transparent px-4 py-2 border border-black rounded-md text-2xl transition cursor-pointer">Buy
+                    now <span class="md:inline-block hidden">--></span></button>
             </div>
-            <img id="showcase__image" class="showcase__image" src="images/toothbrushes.webp"
-                alt="Electric Toothbrushes">
+            <img id="showcase__image" class="mx-auto mr-4 max-w-[20rem] md:max-w-[30rem] object-contain"
+                src="images/toothbrushes.webp" alt="Electric Toothbrushes">
         </section>
-        <section id="comparison" class="section">
-            <h2 class="section__title">
+        <section id="comparison" class="flex flex-col items-center mx-8 my-16 text-center">
+            <h2 class="mb-4 w-[min(40rem, font-medium text-4xl text-white auto)]">
                 x10 more effective than a manual brush
             </h2>
-            <p class="section__description">
+            <p class="mb-8 w-[min(50rem, text-gray-400 auto)]">
                 Sonic toothbrush removes far more plaque than a manual toothbrush from the surface of the teeth and
                 along the gumline without damaging the gums or damaging the enamel
             </p>
         </section>
-        <img width="100%" class="happy-img" src="images/happy.webp" alt="Happy image" />
-        <section class="two-column">
-            <img class="two-column__image" src="images/choose.webp">
+        <img width="100%" class="w-screen h-[40rem] object-cover" src="images/happy.webp" alt="Happy image" />
+        <section class="grid grid-cols-1 md:grid-cols-2 text-center">
+            <img class="shadow-mg w-screen h-[20rem] md:h-[30rem] object-cover" src="images/choose.webp">
             <div>
-                <h2 class="left-title">
+                <h2 class="mb-4 font-medium text-4xl text-white">
                     Choose 1 of 3 speed
                 </h2>
-                <p class="left-description">
+                <p class="m-4 w-auto text-gray-400 text-xl">
                     The 3D touch button on the handle helps you choose the most comfortable level of the device’s
                     performance intensity – high, standard or low</p>
             </div>
         </section>
-        <section id="battery" class="two-column">
-            <div class="mobile-hidden">
-                <h2 class="left-title">
+        <section id="battery" class="grid grid-cols-1 md:grid-cols-2">
+            <div class="md:block hidden">
+                <h2 class="mb-4 font-medium text-4xl text-white">
                     Battery level indication
                 </h2>
-                <p class="left-description">
+                <p class="m-4 w-auto text-gray-400 text-xl">
                     Keep track of your toothbrush's battery level with the LED indicator on the device body </p>
             </div>
-            <img class="two-column__image" src="images/battery.webp">
-            <div class="mobile-only">
-                <h2 class="left-title">
+            <img class="shadow-md w-screen h-[20rem] md:h-[30rem] object-cover" src="images/battery.webp">
+            <div class="block md:hidden">
+                <h2 class="mb-4 font-medium text-4xl text-white">
                     Battery level indication
                 </h2>
-                <p class="left-description">
+                <p class="m-4 w-auto text-gray-400 text-xl">
                     Keep track of your toothbrush's battery level with the LED indicator on the device body </p>
             </div>
         </section>
     </main>
-    <div class="mascot">
+    <div class="right-2 bottom-20 fixed size-40">
         <!-- <h2 class="mascot__tooltip">
             Get your electric toothbrush today!
         </h2> -->
